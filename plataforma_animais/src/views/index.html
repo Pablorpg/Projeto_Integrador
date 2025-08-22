@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐾 Plataforma Animais</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <h1>🐶🐱 Plataforma Animais</h1>
+    <p>Protegendo nossos amigos de quatro patas 🐾</p>
+    <button id="funcionarioBtn" class="btn">👩‍💼 Login Funcionário</button>
+    <div id="loginFuncionario" class="hidden">
+      <input type="text" id="funcId" placeholder="ID">
+      <input type="password" id="funcSenha" placeholder="Senha">
+      <button id="entrarFuncionario" class="btn">Entrar</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Formulários para visitantes -->
+  <section class="card form-card">
+    <h2>📢 Enviar Denúncia</h2>
+    <form id="denunciaForm">
+      <input type="text" name="tipo" placeholder="Tipo de denúncia" required>
+      <textarea name="descricao" placeholder="Descrição detalhada" required></textarea>
+      <label><input type="checkbox" name="urgencia"> Urgente ⚠️</label>
+      <button type="submit" class="btn">Enviar 📤</button>
+    </form>
+  </section>
+
+  <section class="card form-card">
+    <h2>🎁 Registrar Doação</h2>
+    <form id="doacaoForm">
+      <input type="text" name="item" placeholder="Item doado" required>
+      <input type="number" name="quantidade" placeholder="Quantidade" required>
+      <input type="text" name="doador" placeholder="Seu nome" required>
+      <button type="submit" class="btn">Registrar 💝</button>
+    </form>
+  </section>
+
+  <!-- Listas de visitantes -->
+  <section class="card list-card">
+    <h2>📋 Denúncias Recebidas</h2>
+    <div id="denunciaList" class="list"></div>
+  </section>
+
+  <section class="card list-card">
+    <h2>🛍️ Doações Recebidas</h2>
+    <div id="doacaoList" class="list"></div>
+  </section>
+</main>
+
+<footer>
+  💚 Plataforma feita para proteger animais | Todos os direitos reservados
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
