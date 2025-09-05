@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Doacao = require("../models/Doacao");
+const Doacao = require("../models/doacaoModel.js");
 
 router.get("/", async (req, res) => {
   const doacoes = await Doacao.findAll();

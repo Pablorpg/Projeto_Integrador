@@ -1,4 +1,4 @@
-const Doacao = require("../models/Doacao");
+const Doacao = require("../models/doacaoModel.js");
 
 exports.createDoacao = async (req, res) => {
   try {

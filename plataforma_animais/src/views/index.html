@@ -22,13 +22,12 @@
 </header>
 
 <main>
-  <!-- Formulários para visitantes -->
   <section class="card form-card">
     <h2>📢 Enviar Denúncia</h2>
     <form id="denunciaForm">
       <input type="text" name="tipo" placeholder="Tipo de denúncia" required>
       <textarea name="descricao" placeholder="Descrição detalhada" required></textarea>
-      <label><input type="checkbox" name="urgencia"> Urgente ⚠️</label>
+      <label><input type="checkbox" class="urgencia" name="urgencia"> Urgente ⚠️</label>
       <button type="submit" class="btn">Enviar 📤</button>
     </form>
   </section>
@@ -43,7 +42,6 @@
     </form>
   </section>
 
-  <!-- Listas de visitantes -->
   <section class="card list-card">
     <h2>📋 Denúncias Recebidas</h2>
     <div id="denunciaList" class="list"></div>

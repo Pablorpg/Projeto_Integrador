@@ -1,4 +1,4 @@
-// ---------- ELEMENTOS ----------
+
 const denunciaForm = document.getElementById("denunciaForm");
 const denunciaList = document.getElementById("denunciaList");
 const doacaoForm = document.getElementById("doacaoForm");
@@ -8,7 +8,6 @@ const funcionarioBtn = document.getElementById("funcionarioBtn");
 const loginFuncionario = document.getElementById("loginFuncionario");
 const entrarFuncionario = document.getElementById("entrarFuncionario");
 
-// ---------- FUNÇÕES DE ATUALIZAÇÃO ----------
 async function atualizarDenuncias(){
     const res = await fetch("/denuncias");
     const denuncias = await res.json();
@@ -34,7 +33,6 @@ async function atualizarDoacoes(){
     });
 }
 
-// ---------- FORMULÁRIOS ----------
 denunciaForm.addEventListener("submit", async e => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(denunciaForm).entries());
@@ -61,7 +59,6 @@ doacaoForm.addEventListener("submit", async e => {
     atualizarDoacoes();
 });
 
-// ---------- LOGIN FUNCIONÁRIO ----------
 funcionarioBtn.addEventListener("click", () => loginFuncionario.classList.toggle("hidden"));
 
 entrarFuncionario.addEventListener("click", async () => {
@@ -81,15 +78,13 @@ entrarFuncionario.addEventListener("click", async () => {
     }
 });
 
-// ---------- PAINEL FUNCIONÁRIO ----------
 async function mostraPainelFuncionario(){
-    // Esconder formulários e listas do visitante
+
     document.querySelectorAll("form").forEach(f => f.style.display = "none");
     document.querySelectorAll(".form-card, .list-card").forEach(c => c.style.display = "none");
     funcionarioBtn.style.display = "none";
     loginFuncionario.style.display = "none";
 
-    // Criar painel do funcionário
     const painel = document.createElement("div");
     painel.classList.add("card");
     painel.innerHTML = `
@@ -99,7 +94,6 @@ async function mostraPainelFuncionario(){
     `;
     document.body.appendChild(painel);
 
-    // Preencher denúncias
     const denuncias = await (await fetch("/denuncias")).json();
     const painelDenuncias = document.getElementById("painelDenuncias");
     denuncias.forEach(d => {
@@ -110,7 +104,6 @@ async function mostraPainelFuncionario(){
         painelDenuncias.appendChild(div);
     });
 
-    // Preencher doações
     const doacoes = await (await fetch("/doacoes")).json();
     const painelDoacoes = document.getElementById("painelDoacoes");
     doacoes.forEach(d => {
@@ -121,6 +114,5 @@ async function mostraPainelFuncionario(){
     });
 }
 
-// ---------- INICIALIZAÇÃO ----------
 atualizarDenuncias();
 atualizarDoacoes();
